@@ -223,6 +223,73 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.875rem;
 }
 
+/* About section */
+
+.about {
+  background: var(--accent);
+}
+
+.about-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(232, 179, 209, 0.3);
+}
+
+.about-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 15px rgba(232, 179, 209, 0.3);
+}
+
+.about-icon i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.about-icon-large {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(232, 179, 209, 0.3);
+}
+
+.about-icon-large i {
+  color: white;
+  font-size: 2rem;
+}
+
+.about-card h4 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--dark) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.about-card p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
 /* responsiveness tweaks (if needed) */
 @media (max-width: 640px) {
   .max-w-3xl { padding-left: 1rem; padding-right: 1rem; }

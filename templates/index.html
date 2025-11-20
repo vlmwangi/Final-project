@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SafeHaven</title>
+        <title>SafeConnect</title>
         <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CDN -->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,7 +14,7 @@
     <header class="sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="logo text-black text-2xl font-bold cursor-pointer hover:scale-105 transition">
-                <i class="fa fa-shield text-pink-300 mr-2"></i>SafeHaven
+                <i class="fa fa-shield text-pink-300 mr-2"></i>SafeConnect
             </div>
             
             <div id="menu-toggle" class="md:hidden text-white text-3xl cursor-pointer">
@@ -46,7 +46,7 @@
         <!-- Content -->
         <div class="home-content text-center z-10 px-6 max-w-4xl">
             <h1 class="text-white text-6xl md:text-7xl font-bold mb-4 animate-fade-in">
-                SafeHaven
+                SafeConnect
             </h1>
             <h3 class="text-white text-3xl md:text-4xl font-semibold mb-3 animate-fade-in-delay-1">
                 Empowering girls and women.
@@ -98,18 +98,72 @@
     <hr>
 
     <!--About-->
-    <section class="about" id="about" >
-        <div class="container p-8">
-            <h2>About SafeHaven</h2>
-            <p>A digital platform that connects women in danger with rescue organisations, and empowerment programs, focusing on: </p>
-            <ul>
-                <li>Immediate safety & rescue from Gender-Based Violence (GBV)</li>
-                <li>Access to legal and medical aid</li>
-                <li>Education opportunities for rescued girls & women</li>
-                <li>Skill development and employment assistance</li>
-                <li>Data analytics to monitor GBV trends and aid response</li>
-            </ul>
-            <p>SafeHaven's main purpose is to enable survivors or witnesses of GBV to report incidents safely, as well as to receive information/referral to rescue organisations such as Usikimye.</p>
+    <section class="about" id="about">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">About SafeConnect</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    A digital platform that connects women in danger with rescue organisations and empowerment programs.
+                </p>
+            </div>
+
+            <!-- Focus Areas Grid -->
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 mb-12">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fa fa-shield-alt"></i>
+                    </div>
+                    <h4>Immediate Safety & Rescue</h4>
+                    <p>Emergency response from Gender-Based Violence (GBV)</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fa fa-gavel"></i>
+                    </div>
+                    <h4>Legal & Medical Aid</h4>
+                    <p>Access to legal and healthcare support</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fa fa-graduation-cap"></i>
+                    </div>
+                    <h4>Education Opportunities</h4>
+                    <p>Learning programs for rescued girls and women</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <h4>Skill Development</h4>
+                    <p>Vocational training and employment assistance</p>
+                </div>
+
+                <div class="about-card md:col-span-2">
+                    <div class="about-icon">
+                        <i class="fa fa-chart-line"></i>
+                    </div>
+                    <h4>Data Analytics & Monitoring</h4>
+                    <p>Track GBV trends and improve emergency response systems</p>
+                </div>
+            </div>
+
+            <!-- Mission Statement -->
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                <div class="flex items-start gap-4">
+                    <div class="about-icon-large">
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-3">Our Mission</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            SafeConnect's main purpose is to enable survivors or witnesses of GBV to report incidents safely, as well as to receive information and referrals to rescue organisations such as Usikimye.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
@@ -483,7 +537,7 @@
             <div class=container>
                 <p><strong>Police:</strong> 999 <strong>GBV Helpline:</strong> 1195 <strong>Child Helpline:</strong> 116 <strong>Healthcare:</strong> 719</p>
             </div>
-            <p>&copy; 2025 SafeHaven Kenya. All rights reserved.</p>
+            <p>&copy; 2025 SafeConnect Kenya. All rights reserved.</p>
         </div>
     </footer>
 

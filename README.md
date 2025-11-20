@@ -6,6 +6,7 @@
 It prioritizes **privacy, safety, and confidentiality**, enabling survivors or witnesses of GBV to report incidents safely, as well as to receive timely information/referral to rescue organisations such as Usikimye.
 
 **Live deployment:** https://safeconnect-cxy3.onrender.com/
+
 **Product Pitch Deck Link:** https://gamma.app/docs/SafeConnect-ryaqaonwybcn6v3
 
 ## Purpose & Impact
@@ -45,14 +46,14 @@ This project aligns with **SDG 5 & 16**: promoting gender equality, ending viole
 ### **4. Backend API (Flask)**
 - RESTful API endpoints for report submission
 - CRUD operations for admin responders:
-  a) GET /api/reports → view all reports
-  b) PUT /api/report/<id> → update report (resolved or notes)
-  c) DELETE /api/report/<id> → delete a report
+    a) GET /api/reports → view all reports
+    b) PUT /api/report/<id> → update report (resolved or notes)
+    c) DELETE /api/report/<id> → delete a report
+- JWT-based admin authentication
+- Simple admin dashboard that can fetch submissions via JS + token.
 - JSON-based structured data storage
 - CORS enabled for frontend-backend communication
 - Logs and stores reports for partner organisation access
-- JWT-based admin authentication
-- Simple admin dashboard that can fetch submissions via JS + token.
 
 ---
 

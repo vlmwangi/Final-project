@@ -1,0 +1,229 @@
+/* Base Theme Styles */
+:root {
+  --primary: #e8b3d1;  
+  --secondary: rgb(250, 1, 43); 
+  --accent: #f9f6f6;    /* soft background */
+  --color-border: #e2e8f0;
+  --color-ring: #f99eb7c1;
+  --color-primary-hover: rgb(234, 232, 243);
+}
+
+/* general body */
+body {
+  background-color: var(--accent);
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Buttons (fallback & small override of Tailwind) */
+button,
+.btn {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* small utilities (complementing Tailwind) */
+.text-center {
+  text-align: center;
+}
+.text-pink {
+  color: var(--primary);
+}
+.bg-pink {
+  background-color: var(--primary);
+  color: white;
+}
+.rounded {
+  border-radius: 10px;
+}
+.shadow {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* Keep headings (prevent tailwind CSS from resetting all the default heading */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Tab Buttons */
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.tab-btn:hover {
+  background-color: rgba(232, 179, 209, 0.2);
+}
+
+.tab-btn.active {
+  background-color: rgba(232, 179, 209, 0.3);
+  border-bottom: 3px solid var(--primary);
+  font-weight: 700;
+}
+
+/* Tab Content - HIDE BY DEFAULT */
+.tab-content {
+  display: none !important; /* Important to override any other styles */
+}
+
+/* Tab Content - SHOW WHEN ACTIVE */
+.tab-content.active {
+  display: block !important; /* Important to override */
+}
+
+/* Make sure grid displays inside active tab */
+.tab-content.active > div {
+  display: grid !important;
+}
+
+/* Report form styling */
+.report {
+  background: var(--accent);
+}
+
+/* Main container */
+.report-form {
+  background: white;
+  padding: 1.5rem; 
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 2rem auto;
+  border: 1px solid var(--color-border);
+  line-height: 1.2; /* tight text spacing */
+}
+
+/* Labels */
+.report-form label {
+  display: block;
+  margin-bottom: 0.3rem; /* less space under label */
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+/* Inputs, selects, and textareas */
+.report-form input[type="text"],
+.report-form input[type="tel"],
+.report-form input[type="email"],
+.report-form select,
+.report-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.7rem; /* tight padding */
+  margin-bottom: 0.5rem; /* close vertical spacing */
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.report-form input:focus,
+.report-form select:focus,
+.report-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(232, 179, 209, 0.15);
+}
+
+/* Textarea smaller default */
+.report-form textarea {
+  resize: vertical;
+  min-height: 80px; 
+}
+
+/* Section headers inside form */
+.report-form h4 {
+  margin: 1.5rem 0 0.75rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Checkbox styling */
+.report-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  accent-color: var(--primary);
+  transform: scale(1.1);
+}
+
+.report-form input[type="checkbox"] + label {
+  display: inline;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+/* Submit button */
+.report-form .btn {
+  width: 100%;
+  margin-top: 1.2rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background: pink;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(232, 179, 209, 0.4);
+}
+
+.report-form .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(232, 179, 209, 0.5);
+}
+
+.report-form .btn:active {
+  transform: translateY(0);
+}
+
+/* Optional attributes styling */
+.report-form input[optional] {
+  border-style: dashed;
+}
+
+/* Required field indicator */
+.report-form label[for]:after {
+  content: " *";
+  color: #dc2626;
+  font-weight: bold;
+}
+
+/* Remove asterisk from optional fields */
+.report-form label[for="email"]:after {
+  content: " (optional)";
+  color: #6b7280;
+  font-weight: normal;
+  font-size: 0.875rem;
+}
+
+/* responsiveness tweaks (if needed) */
+@media (max-width: 640px) {
+  .max-w-3xl { padding-left: 1rem; padding-right: 1rem; }
+}

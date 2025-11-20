@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SafeHaven</title>
+        <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CDN -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+
+<body>
+    <!--Header-->
+    <header class="sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="logo text-black text-2xl font-bold cursor-pointer hover:scale-105 transition">
+                <i class="fa fa-shield text-pink-300 mr-2"></i>SafeHaven
+            </div>
+            
+            <div id="menu-toggle" class="md:hidden text-white text-3xl cursor-pointer">
+                &#9776;
+            </div>
+            
+            <ul class="nav-links hidden md:flex gap-6 items-center" id="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#femicide" class="nav-link">Femicide</a></li>
+                <li><a href="#help" class="nav-link">Emergency Resources</a></li>
+                <li><a href="#fgm" class="nav-link">FGM</a></li>
+                <li><a href="#awareness" class="nav-link">Awareness</a></li>
+                <li><a href="#report" class="nav-link">Report</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Home Section-->
+    <section class="home min-h-screen flex items-center justify-center relative overflow-hidden" id="home">
+        <!-- Gradient Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 opacity-90"></div>
+        
+        <!-- Animated Shapes -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-20 left-40 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        
+        <!-- Content -->
+        <div class="home-content text-center z-10 px-6 max-w-4xl">
+            <h1 class="text-white text-6xl md:text-7xl font-bold mb-4 animate-fade-in">
+                SafeHaven
+            </h1>
+            <h3 class="text-white text-3xl md:text-4xl font-semibold mb-3 animate-fade-in-delay-1">
+                Empowering girls and women.
+            </h3>
+            <p class="text-white text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-delay-2">
+                Breaking the Silence. Building Futures
+            </p>
+            
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-3">
+                <a href="#report" class="px-6 py-3 bg-gray-200 text-gray-800 rounded-full font-medium shadow-sm hover:bg-gray-300 transition duration-200 flex items-center gap-2"
+                    <span class="flex items-center gap-2">
+                        <i class="fa fa-file-alt"></i>
+                        Report Incident
+                        <i class="fa fa-arrow-right transform group-hover:translate-x-1 transition"></i>
+                    </span>
+                </a>
+                <a href="#help" class="px-6 py-3 bg-gray-200 text-gray-800 rounded-full font-medium shadow-sm hover:bg-gray-300 transition duration-200 flex items-center gap-2"
+                    <span class="flex items-center gap-2">
+                        <i class="fa fa-hands-helping"></i>
+                        Get Support
+                        <i class="fa fa-arrow-right transform group-hover:translate-x-1 transition"></i>
+                    </span>
+                </a>
+            </div>
+            
+            <!-- Emergency Numbers -->
+            <div class="mt-12 flex flex-wrap justify-center gap-4 animate-fade-in-delay-4">
+                <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-full px-6 py-3 text-white font-semibold">
+                    <i class="fa fa-phone-alt text-pink-200 mr-2"></i>
+                    Emergency: 999
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-full px-6 py-3 text-white font-semibold">
+                    <i class="fa fa-phone-alt text-pink-200 mr-2"></i>
+                    GBV Helpline: 1195
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+            <a href="#about" class="text-white text-4xl opacity-70 hover:opacity-100 transition">
+                <i class="fa fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+    
+    <hr>
+    <hr>
+
+    <!--About-->
+    <section class="about" id="about" >
+        <div class="container p-8">
+            <h2>About SafeHaven</h2>
+            <p>A digital platform that connects women in danger with rescue organisations, and empowerment programs, focusing on: </p>
+            <ul>
+                <li>Immediate safety & rescue from Gender-Based Violence (GBV)</li>
+                <li>Access to legal and medical aid</li>
+                <li>Education opportunities for rescued girls & women</li>
+                <li>Skill development and employment assistance</li>
+                <li>Data analytics to monitor GBV trends and aid response</li>
+            </ul>
+            <p>SafeHaven's main purpose is to enable survivors or witnesses of GBV to report incidents safely, as well as to receive information/referral to rescue organisations such as Usikimye.</p>
+        </div>
+    </section>
+    
+    <hr>
+    <hr>
+
+    <!--Femicide-->
+    <section class="femicide" id="femicide">
+        <div class="container p-8">
+            <h1 style="color:rgb(162, 64, 63)" ><strong>Addressing the Femicide Crisis</strong></h1>
+            <p style="color:crimson"><em><p>Femicide is the intentional the killing of a woman or girl, in particular by a man and on account of her gender.</em></p>
+            <p>Understanding, preventing and responding to gender-based killings in Kenya</p>
+            <div class="card text-center border border-red-200 bg-red-50 p-4 rounded-xl shadow mx-8 my-4 hover:shadow-lg">
+                <p style="color:rgb(162, 64, 63)">Femicide is an emergency in Kenya. If you or someone you know is in danger, act now.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div>Emergency: <span style="color:rgb(162, 64, 63)" class="font-bold">999</span></div>
+                    <div>GBV Helpline: <span style="color:rgb(162, 64, 63)" class="font-bold">1195</span></div>
+                    <div>Usikimye: <span style="color:rgb(162, 64, 63)" class="font-bold">0800000999</span> or <span style="color:rgb(162, 64, 63)" class="font-bold">0718-158-400</span></div>
+                </div>
+            </div>
+
+            <p style="text-align: center;"><strong>Source: <a href="https://femicide.africauncensored.online/"><u style="color:hotpink">The Silencing Women Project, an initiative by Odipo Dev and Africa Uncensored.</u></strong></a></p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mx-6 mt-6">
+                <div class="card text-center border border-red-200 bg-red-50 p-4 rounded-xl shadow-sm hover:shadow-lg">
+                    <h2 style="color:crimson;">170+</h2>
+                    <h3>Women have been murdered in Kenya in 2024</h3>
+                </div>
+                <div class="card text-center border border-red-200 bg-red-50 p-4 rounded-xl shadow-sm hover:shadow-lg">
+                    <h2 style="color:crimson;">70%</h2>
+                    <h3>Were murdered by intimate partners</h3>
+                </div>
+                <div class="card text-center border border-red-200 bg-red-50 p-4 rounded-xl shadow-sm hover:shadow-lg">
+                    <h2 style="color:crimson;">18 hours</h2>
+                    <h3>Every 18 hours a woman is killed in Kenya</h3>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mx-6 my-8">
+                <div class="border border-orange-400 bg-orange-50 p-5 rounded-xl shadow-md hover:shadow-lg">
+                    <h3 class="text-orange-700 font-bold mb-2">Critical Warning Signs</h3>
+                    <p style="color:rgb(215, 120, 75)"><strong>These signs indicate high risk</strong>, seek help immediately.</p>
+                        <ul>
+                            <li>⚠ Escalating violence or threats</li>
+                            <li>⚠ Extreme jealousy and controlling behavior</li>
+                            <li>⚠ Threats to kill or harm you</li>
+                            <li>⚠ Strangulation attempts</li>
+                            <li>⚠ Physical threats with weapons</li>
+                            <li>⚠ Separation or attempts to leave abusive partner</li>
+                            <li>⚠ Stalking</li>
+                            <li>⚠ Substance abuse combined with violence</li>
+                            <li>⚠ Rape/forced sexual acts</li>
+                            <li>⚠ Threats to harm children or pets</li>
+                        </ul>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="border border-green-300 bg-green-50 p-5 rounded-xl shadow-md hover:shadow-lg">
+                        <h3 class="text-green-700 font-bold mb-2">If You're In Danger</h3>
+                        <ul>
+                            <li>✓ Call emergency services if in immediate danger </li>
+                            <li>✓ Go to a safe location away from the abuser</li>
+                            <li>✓ Inform trusted friends or family about your situation</li>
+                            <li>✓ Document all incidents with dates and details</li>
+                            <li>✓ Seek a protection/restraining order against the abuser</li>
+                        </ul>
+                    </div>
+                    <div class="border border-green-300 bg-green-50 p-5 rounded-xl md:col-span-2 shadow-md hover:shadow-lg">
+                        <h3 class="text-green-700 font-bold mb-2">Safety Planning</h3>
+                        <ul>
+                            <li>✓ Identify safe places to go in an emergency</li>
+                            <li>✓ Keep important documents and emergency cash accessible</li>
+                            <li>✓ Keep emergency contacts readily accessible</li>
+                            <li>✓ Have a packed bag ready with essentials</li>
+                            <li>✓ Trust your instincts and prioritize your safety</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    <hr>
+    
+    <!--Help & Resources-->
+    <section class="help" id="help">
+        <div class="container p-8">
+            <h1><strong>Emergency Resources</strong></h1>
+            
+            <!--Tabs Navigation-->
+            <nav class="container flex flex-wrap justify-center gap-3 mt-6 border-grey-800 shadow-sm rounded-lg p-3 mx-auto max-w-4xl">
+                <button class="tab-btn active font-bold hover:text-pink-500 px-4 py-2 rounded transition" data-target="helplines">Helplines</button>
+                <button class="tab-btn font-bold hover:text-pink-500 px-4 py-2 rounded transition" data-target="rescue">Rescue Centers</button>
+                <button class="tab-btn font-bold hover:text-pink-500 px-4 py-2 rounded transition" data-target="organisations">Organisations</button>
+            </nav>
+        
+            <!--Tab 1: Helplines-->
+            <div class="tab-content active" id="helplines">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mx-4">
+                    <div class="helpline-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2"><i class="fa fa-phone text-pink-600 text-3xl mb-3"></i>  National GBV Helpline</h3>
+                        <p class="text-pink-600 text-2xl font-bold mb-1">1195</p>
+                        <p class="text-gray-600 text-sm">24/7 toll-free support</p>
+                    </div>
+                
+                    <div class="helpline-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2"><i class="fa fa-phone text-pink-600 text-3xl mb-3"></i>  Child Helpline Kenya</h3>
+                        <p class="text-pink-600 text-2xl font-bold mb-1">116</p>
+                        <p class="text-gray-600 text-sm">Support for children</p>
+                    </div>
+                
+                    <div class="helpline-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2"><i class="fa fa-phone text-pink-600 text-3xl mb-3"></i>  Kenya Red Cross Emergency</h3>
+                        <p class="text-pink-600 text-2xl font-bold mb-1">1199</p>
+                        <p class="text-gray-600 text-sm">24/7 toll-free hotline for emergency assistance</p>  
+                    </div>
+                
+                    <div class="helpline-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2"><i class="fa fa-phone text-pink-600 text-3xl mb-3"></i>  Coalition on Violence Against Women</h3>
+                        <p class="text-pink-600 text-xl font-bold mb-1">+254 20 2731 630</p>
+                        <p class="text-gray-600 text-sm">COVAW support line</p>
+                    </div>
+                
+                    <div class="helpline-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2"><i class="fa fa-phone text-pink-600 text-3xl mb-3"></i>  Kenya Police</h3>
+                        <p class="text-pink-600 text-2xl font-bold mb-1">999</p>
+                        <p class="text-gray-600 text-sm">Emergency police response</p>
+                    </div>
+                
+                    <div class="helpline-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-pink-500">                        
+                        <h3 class="text-lg font-bold text-gray-800 mb-2" ><i class="fa fa-phone text-pink-600 text-3xl mb-3"></i>  FIDA Kenya</h3>
+                        <p class="text-pink-600 text-xl font-bold mb-1">+254 20 3874 977</p>
+                        <p class="text-gray-600 text-sm">Legal aid for women</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!--Tab 2: Rescue Centers-->
+            <div class="tab-content" id="rescue">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 mx-4">
+                    <div class="rescue-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-l-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Nairobi Women's Hospital GBV Recovery Centre</h3>
+                        <p class="text-gray-700 mb-2">
+                        <i class="fa fa-map-marker-alt text-pink-600 mr-2"></i>Nairobi
+                        </p>
+                        <p class="text-gray-600 mb-3">
+                            <i class="fa fa-heart text-pink-500 mr-2"></i>Medical care, counselling, legal aid
+                        </p>
+                        <p class="text-pink-600 font-bold text-lg">
+                            <i class="fa fa-phone mr-2"></i>+254 20 272 2240
+                        </p>
+                    </div>
+                
+                    <div class="rescue-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-l-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Kenyatta National Hospital GBV Centre</h3>
+                        <p class="text-gray-700 mb-2">
+                            <i class="fa fa-map-marker-alt text-pink-600 mr-2"></i>Nairobi
+                        </p>
+                        <p class="text-gray-600 mb-3">
+                            <i class="fa fa-heart text-pink-500 mr-2"></i>Emergency medical care, PEP, counselling
+                        </p>
+                        <p class="text-pink-600 font-bold text-lg">
+                            <i class="fa fa-phone mr-2"></i>+254 20 272 6300
+                        </p>
+                    </div>
+                    
+                    <div class="rescue-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-l-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Liverpool VCT Care & Treatment</h3>
+                        <p class="text-gray-700 mb-2">
+                            <i class="fa fa-map-marker-alt text-pink-600 mr-2"></i>Multiple Locations
+                        </p>
+                        <p class="text-gray-600 mb-3">
+                            <i class="fa fa-heart text-pink-500 mr-2"></i>Medical, psychological support, legal aid
+                        </p>
+                        <p class="text-pink-600 font-bold text-lg">
+                            <i class="fa fa-phone mr-2"></i>+254 20 2720 520
+                        </p>
+                    </div>
+                
+                    <div class="rescue-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-l-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Uzima Centre</h3>
+                        <p class="text-gray-700 mb-2">
+                            <i class="fa fa-map-marker-alt text-pink-600 mr-2"></i>Mombasa
+                        </p>
+                        <p class="text-gray-600 mb-3">
+                            <i class="fa fa-heart text-pink-500 mr-2"></i>Holistic GBV response services
+                        </p>
+                        <p class="text-pink-600 font-bold text-lg">
+                            <i class="fa fa-phone mr-2"></i>+254 728 608 598
+                        </p>
+                    </div>
+                
+                    <div class="rescue-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-l-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Médecins Sans Frontières (MSF)</h3>
+                        <p class="text-gray-700 mb-2">
+                            <i class="fa fa-map-marker-alt text-pink-600 mr-2"></i>Nairobi - Eastleigh, Mathare, Huruma
+                        </p>
+                        <p class="text-gray-600 mb-3">
+                            <i class="fa fa-heart text-pink-500 mr-2"></i>Free medical and psychological care
+                        </p>
+                        <p class="text-pink-600 font-bold text-lg">
+                            <i class="fa fa-phone mr-2"></i>+254 20 2864 300
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <!--Tab 3: Organisations-->
+            <div class="tab-content" id="organisations">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 mx-4">
+                    <div class="org-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Usikimye</h3>
+                        <p class="text-gray-600 mb-4">GBV Support and Advocacy</p>
+                        <a href="https://www.usikimye.org" target="_blank" class="text-pink-600 hover:text-pink-800 font-semibold inline-flex items-center transition">
+                            <i class="fa fa-globe mr-2"></i>www.usikimye.org</a>
+                    </div>
+                
+                    <div class="org-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">FIDA Kenya</h3>
+                        <p class="text-gray-600 mb-4">Legal aid and women's rights advocacy</p>
+                        <a href="https://www.fidakenya.org" target="_blank" class="text-pink-600 hover:text-pink-800 font-semibold inline-flex items-center transition">
+                            <i class="fa fa-globe mr-2"></i>www.fidakenya.org</a>
+                    </div>
+                
+                    <div class="org-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">COVAW</h3>
+                        <p class="text-gray-600 mb-4">Coalition on Violence Against Women - Comprehensive GBV prevention and response</p>
+                        <a href="https://www.covaw.or.ke" target="_blank" class="text-pink-600 hover:text-pink-800 font-semibold inline-flex items-center transition">
+                            <i class="fa fa-globe mr-2"></i>www.covaw.or.ke</a>
+                    </div>
+                
+                    <div class="org-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-pink-500">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">CREAW</h3>
+                        <p class="text-gray-600 mb-4">Centre for Rights Education and Awareness - Legal empowerment and advocacy</p>
+                        <a href="https://www.creawkenya.org" target="_blank" class="text-pink-600 hover:text-pink-800 font-semibold inline-flex items-center transition">
+                            <i class="fa fa-globe mr-2"></i>www.creawkenya.org</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <hr>
+    <hr>
+
+    <!--FGM-->
+    <section class="fgm" id="fgm">
+        <div class="border border-red-300 bg-red-50 p-8 rounded-2xl shadow-lg mx-8 my-6">
+            <h2 style="color:rgb(162, 64, 63)">Fighting FGM in Kenya</h2>
+            <p style="color:crimson">Zero tolerance for Female Genital Mutilation</p><br>
+            <p style="color:rgb(162, 64, 63)"><strong>What is FGM?</strong></p>
+            <p>Female Genital Mutilation (FGM) involves the partial or total removal of external female genitalia for non-medical reasons. It is illegal in Kenya under the Prohibition of Female Genital Mutilation Act 2011, with penalties of up to 3 years imprisonment or a fine of KES 200,000.</p><br>
+            <p style="color:rgb(162, 64, 63)"><strong>What Is the Prevalence of FGM in Kenya?</strong></p>
+            <p>According to the 2014 Kenya Demographic and Health Survey (KDHS), the prevalence of FGM in Kisii County was at 84% against the national prevalence of 21%.</p><br>
+            <p style="color:rgb(162, 64, 63)"><strong>Why is FGM harmful?</strong></p>
+            <p>FGM has no health benefits and causes severe immediate and long-term physical and psychological harm including severe pain, infections, complications in childbirth, psychological trauma, and can be fatal.</p><br>
+            <p style="color:rgb(162, 64, 63)"><strong>How Can I Report FGM?</strong></p>
+            <p>Report to the police (999), Anti-FGM Board (+254 20 2211 441), Child Helpline (116), or any of the GBV helplines. All reports are treated seriously and confidentially.</p><br>
+            <p style="color:rgb(162, 64, 63)"><strong>Support for FGM Survivors</strong></p>
+            <p>Medical reconstruction, psychological counseling, legal support, and community reintegration programs are available through specialised centers and organisations.</p><br>
+        </div>
+    </section>
+
+    <hr>
+    <hr>
+
+    <!--Awareness & Education-->
+    <section class="awareness" id="awareness">
+        <div class="container p-8">
+            <h2>Awareness & Education</h2>
+            <p>Learn about your rights and access educational opportunities.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mx-4">
+                    <div class="helpline-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-l-4 border-pink-500">
+                    <h3><i class="fa fa-book text-pink-600"></i> Know Your Rights</h3>
+                    <p>Comprehensive education on legal rights and protections</p>
+                    <ul>
+                        <li>• Constitutional rights for women in Kenya</li>
+                        <li>• Sexual Offences Act 2006</li>
+                        <li>• Protection Against Domestic Violence Act</li>
+                        <li>• Prohibition of Female Genital Mutilation Act</li>
+                        <li>• Understanding consent and bodily autonomy</li>
+                    </ul>
+                </div>
+                <div class="helpline-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-l-4 border-pink-500">
+                    <h3><i class="fa fa-shield text-pink-600"></i> Safety & Prevention</h3>
+                    <p>Practical strategies for safety and violence prevention</p>
+                    <ul>
+                        <li>• Recognizing warning signs of abuse</li>
+                        <li>• Creating personal safety plans</li>
+                        <li>• Self-defense techniques and resources</li>
+                        <li>• Bystander intervention training</li>
+                        <li>• Community-based protection strategies</li>
+                    </ul>
+                </div>
+                <div class="helpline-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-l-4 border-pink-500">
+                    <h3><i class="fa fa-graduation-cap text-pink-600"></i> Awareness Campaigns</h3>
+                    <p>Community education and advocacy initiatives</p>
+                    <ul>
+                        <li>• 16 Days of Activism Against GBV</li>
+                        <li>• Femicide awareness and prevention</li>
+                        <li>• FGM eradication campaigns</li>
+                        <li>• Community dialogue forums</li>
+                        <li>• Men and boys as allies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <hr>
+    <hr>
+
+    <!--Report-->
+    <section class="report" id="report">
+        <div class="container p-8">
+            <h2>Report an Incident</h2>
+            <p>Your safety is our priority. Use the form below to report any incidents of gender-based violence or abuse. All reports are confidential and will be handled with care.</p>
+            <form id="reportForm" class="report-form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" optional>
+
+                <label for="incident-type">Type of Incident</label>
+                <select id="incident-type" name="incident-type" required>
+                    <option value="">-- Select Type --</option>
+                    <option value="domestic">Domestic Violence</option>
+                    <option value="sexual">Sexual Violence</option>
+                    <option value="fgm">FGM/Female Genital Mutilation</option>
+                    <option value="femicide-threat">Femicide Threat</option>
+                    <option value="trafficking">Human Trafficking</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="location">Location of Incident</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="urgency-level">Urgency Level</label>
+                <select id="urgency-level" name="urgency-level" required>
+                    <option value="">-- Select Urgency --</option>
+                    <option value="immediate">Immediate Danger - Need Help Now</option>
+                    <option value="urgent">Urgent - Within 24 hours</option>
+                    <option value="moderate">Moderate - Within a week</option>
+                </select>
+
+                <label for="description">Description of Incident</label>
+                <textarea id="description" name="description" rows="5" required></textarea>
+
+                <h4>Support Needed</h4>
+                <input type="checkbox" name="option1" value="value1"> Medical Assistance<br>
+                <input type="checkbox" name="option2" value="value2"> Legal Aid<br>
+                <input type="checkbox" name="option3" value="value3"> Counseling Services<br>
+                <input type="checkbox" name="option4" value="value4"> Emergency Shelter<br>
+                <input type="checkbox" name="option5" value="value5"> Police Intervention<br>
+                <input type="checkbox" name="option6" value="value6"> Other<br><br>
+
+                <div class="report-discaimer">
+                    <p style="color:crimson"><strong>ⓘ Your report will be reviewed by trained professionals. In emergency situations, please call 999 (Police) or 1195 (GBV Helpline) immediately.</strong></p>
+                </div>
+
+                <button type="submit" class="btn">Submit Report</button>
+            </form>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+        <div class="bg-[#FFE6D2] text-black text-center p-8 mt-8">
+            <div class=container>
+                <p><strong>Police:</strong> 999 <strong>GBV Helpline:</strong> 1195 <strong>Child Helpline:</strong> 116 <strong>Healthcare:</strong> 719</p>
+            </div>
+            <p>&copy; 2025 SafeHaven Kenya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+</body>
+</html>

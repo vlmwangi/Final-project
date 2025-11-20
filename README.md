@@ -5,7 +5,9 @@
 **SafeConnect** is a secure, accessible platform designed to help women and girls report incidents of gender-based violence (GBV), access emergency support, and connect with verified resources.  
 It prioritizes **privacy, safety, and confidentiality**, enabling survivors or witnesses of GBV to report incidents safely, as well as to receive timely information/referral to rescue organisations such as Usikimye.
 
-**Live deployment**: https://safeconnect-cxy3.onrender.com/
+**Live deployment:** https://safeconnect-cxy3.onrender.com/
+
+**Product Pitch Deck Link:** https://gamma.app/docs/SafeConnect-ryaqaonwybcn6v3
 
 ## Purpose & Impact
 SafeConnect aims to:
@@ -21,14 +23,6 @@ This project aligns with **SDG 5 & 16**: promoting gender equality, ending viole
 - **Information & Resources:** Display information, statistics, and resources related to gender-based violence such as helplines and rescue centres.
 - **Referral System:** The app connects survivors with legal aid, counseling, and rescue organizations. Reports and contacts are routed securely the relevant organsations.
 - **Not an emergency service:** SafeConnect provides referral and reporting tools, not direct rescue operations.
-
-## Task
-- Basic user interface for submission.
-- Backend API to store submissions.
-- Simple admin dashboard to view submissions or export them.
-- Integrate a directory of resources (safe houses, helplines).
-- Deploy on a basic host.
-- Future additions: geolocation, anonymous mode, SMS alert integration.
 
 ---
 
@@ -51,6 +45,12 @@ This project aligns with **SDG 5 & 16**: promoting gender equality, ending viole
 
 ### **4. Backend API (Flask)**
 - RESTful API endpoints for report submission
+- CRUD operations for admin responders:
+    a) GET /api/reports → view all reports
+    b) PUT /api/report/<id> → update report (resolved or notes)
+    c) DELETE /api/report/<id> → delete a report
+- JWT-based admin authentication
+- Simple admin dashboard that can fetch submissions via JS + token.
 - JSON-based structured data storage
 - CORS enabled for frontend-backend communication
 - Logs and stores reports for partner organisation access
@@ -119,8 +119,6 @@ Frontend: Open index.html in browser, or visit live site: https://safeconnect-cx
 
 
 ## Future Enhancements
-- Full user authentication (JWT login/registration)
-- CRUD operations for admin responders
 - SQL/NoSQL database integration
 - Geolocation-based help center lookup
 - Real emergency alert system

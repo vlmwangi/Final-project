@@ -6,6 +6,7 @@
 It prioritizes **privacy, safety, and confidentiality**, enabling survivors or witnesses of GBV to report incidents safely, as well as to receive timely information/referral to rescue organisations such as Usikimye.
 
 **Live deployment:** https://safeconnect-cxy3.onrender.com/
+
 **Product Pitch Deck Link:** https://gamma.app/docs/SafeConnect-ryaqaonwybcn6v3
 
 ## Purpose & Impact

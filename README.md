@@ -52,6 +52,8 @@ This project aligns with **SDG 5 & 16**: promoting gender equality, ending viole
 
 ### **4. Backend API (Flask)**
 - RESTful API endpoints for report submission
+- Full user authentication (JWT login/registration)
+- CRUD operations for admin responders
 - JSON-based structured data storage
 - CORS enabled for frontend-backend communication
 - Logs and stores reports for partner organisation access
@@ -120,8 +122,6 @@ Frontend: Open index.html in browser, or visit live site: https://safeconnect-cx
 
 
 ## Future Enhancements
-- Full user authentication (JWT login/registration)
-- CRUD operations for admin responders
 - SQL/NoSQL database integration
 - Geolocation-based help center lookup
 - Real emergency alert system

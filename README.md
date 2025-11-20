@@ -5,7 +5,8 @@
 **SafeConnect** is a secure, accessible platform designed to help women and girls report incidents of gender-based violence (GBV), access emergency support, and connect with verified resources.  
 It prioritizes **privacy, safety, and confidentiality**, enabling survivors or witnesses of GBV to report incidents safely, as well as to receive timely information/referral to rescue organisations such as Usikimye.
 
-**Live deployment**: https://safeconnect-cxy3.onrender.com/
+**Live deployment:** https://safeconnect-cxy3.onrender.com/
+**Product Pitch Deck Link:** https://gamma.app/docs/SafeConnect-ryaqaonwybcn6v3
 
 ## Purpose & Impact
 SafeConnect aims to:

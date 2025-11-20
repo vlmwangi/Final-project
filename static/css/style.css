@@ -246,7 +246,6 @@ h1, h2, h3, h4, h5, h6 {
 .about-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
   border-radius: 50%;
   display: flex;
   align-items: center;

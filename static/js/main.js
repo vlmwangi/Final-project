@@ -53,14 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const reportData = {
         name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
+        contact: document.getElementById("contact").value,
         email: document.getElementById("email").value || "Not provided",
-        incidentType: document.getElementById("incident-type").value,
+        incident: document.getElementById("incident-type").value,
         location: document.getElementById("location").value,
-        urgencyLevel: document.getElementById("urgency-level").value,
+        urgency_level: document.getElementById("urgency-level").value,
         description: document.getElementById("description").value,
-        supportOptions: Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value),
-        date: new Date().toISOString()
+        support_needed: Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value),
+        anonymous: document.getElementById("anonymous").checked || false
       };
 
 

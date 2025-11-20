@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - SafeConnect</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">SafeConnect Admin Dashboard</h1>
+
+    <!-- Login -->
+    <div id="loginDiv" class="mb-6">
+        <h2 class="text-xl font-semibold">Admin Login</h2>
+        <input type="text" id="username" placeholder="Username" class="border p-2 mr-2">
+        <input type="password" id="password" placeholder="Password" class="border p-2 mr-2">
+        <button id="loginBtn" class="bg-blue-500 text-white p-2 rounded">Login</button>
+        <p id="loginMessage" class="mt-2"></p>
+    </div>
+
+    <!-- Reports Table -->
+    <div id="dashboardDiv" class="hidden">
+        <h2 class="text-xl font-semibold mb-2">Submitted Reports</h2>
+        <table class="min-w-full bg-white border">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border px-2 py-1">Name</th>
+                    <th class="border px-2 py-1">Location</th>
+                    <th class="border px-2 py-1">Incident</th>
+                    <th class="border px-2 py-1">Contact</th>
+                    <th class="border px-2 py-1">Urgency</th>
+                    <th class="border px-2 py-1">Resolved</th>
+                    <th class="border px-2 py-1">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="reportsTable"></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+let token = "";
+
+// Admin Login
+document.getElementById("loginBtn").addEventListener("click", async () => {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const loginMessage = document.getElementById("loginMessage");
+
+    try {
+        const res = await fetch("/api/admin/login", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({username, password})
+        });
+        const data = await res.json();
+        if (res.ok) {
+            token = data.token;
+            loginMessage.textContent = "Login successful!";
+            document.getElementById("loginDiv").classList.add("hidden");
+            document.getElementById("dashboardDiv").classList.remove("hidden");
+            fetchReports();
+        } else {
+            loginMessage.textContent = data.error || "Login failed";
+        }
+    } catch (err) {
+        console.error(err);
+        loginMessage.textContent = "Server error";
+    }
+});
+
+// Fetch Reports
+async function fetchReports() {
+    try {
+        const res = await fetch("/api/reports", {
+            headers: {Authorization: token}
+        });
+        const reports = await res.json();
+        const tbody = document.getElementById("reportsTable");
+        tbody.innerHTML = "";
+
+        reports.forEach(report => {
+            const tr = document.createElement("tr");
+            tr.classList.add("border");
+
+            tr.innerHTML = `
+                <td class="border px-2 py-1">${report.name || 'Anonymous'}</td>
+                <td class="border px-2 py-1">${report.location}</td>
+                <td class="border px-2 py-1">${report.incident}</td>
+                <td class="border px-2 py-1">${report.contact || '-'}</td>
+                <td class="border px-2 py-1">${report.urgency_level || '-'}</td>
+                <td class="border px-2 py-1">
+                    <input type="checkbox" ${report.resolved ? "checked" : ""} onchange="toggleResolved('${report._id}', this.checked)">
+                </td>
+                <td class="border px-2 py-1">
+                    <button class="bg-red-500 text-white px-2 py-1 rounded" onclick="deleteReport('${report._id}')">Delete</button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+// Toggle Resolved
+async function toggleResolved(id, value) {
+    try {
+        await fetch(`/api/report/${id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json", Authorization: token },
+            body: JSON.stringify({resolved: value})
+        });
+        fetchReports();
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+// Delete Report
+async function deleteReport(id) {
+    if (!confirm("Are you sure you want to delete this report?")) return;
+    try {
+        await fetch(`/api/report/${id}`, {
+            method: "DELETE",
+            headers: { Authorization: token }
+        });
+        fetchReports();
+    } catch (err) {
+        console.error(err);
+    }
+}
+</script>
+</body>
+</html>
